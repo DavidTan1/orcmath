@@ -37,6 +37,7 @@ public class Sampler extends GUIApplication {
 	public void initScreen() {
 		SampleScreen s = new SampleScreen(getWidth(), getHeight());
 		setScreen(s);
+		
 	}
 
 	public class SampleScreen extends FullFunctionScreen{
@@ -74,7 +75,7 @@ public class Sampler extends GUIApplication {
 			scroll.update();
 			
 			viewObjects.add(scroll);
-			
+			viewObjects.add(new Monkey());
 			
 			TextBox box = new TextBox(20, 160, 200, 100, "Try typing here.");
 			viewObjects.add(box);
@@ -143,6 +144,11 @@ public class Sampler extends GUIApplication {
 			}
 		}
 		
+	}
+
+	public Visible Monkey() {
+		// TODO Auto-generated method stub
+		return null;
 	}
 	
 
