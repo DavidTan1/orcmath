@@ -75,7 +75,7 @@ public class Sampler extends GUIApplication {
 			scroll.update();
 			
 			viewObjects.add(scroll);
-			viewObjects.add(new Monkey("name","monster",10,10));
+			viewObjects.add(new Monkey("blue-eye white dragon","monster",10,10));
 			
 			TextBox box = new TextBox(20, 160, 200, 100, "Try typing here.");
 			viewObjects.add(box);

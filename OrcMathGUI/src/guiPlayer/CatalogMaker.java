@@ -40,5 +40,10 @@ public class CatalogMaker {
 		list.add(new Monkey(name,type,level,price));
 		System.out.println("Item added Sucessfully");
 	}
+	
+	public void addItem(String input)
+	{
+		
+	}
 
 }

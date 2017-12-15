@@ -23,6 +23,7 @@ public class Monkey extends AnimatedComponent{
 		this.level = level;
 		this.price = price;
 		
+		
 		super(40,40,100,100);
 		
 		//addSequence("resources/goku.png", 100, 0, 476, 60, 62, 13);
@@ -48,5 +49,6 @@ public class Monkey extends AnimatedComponent{
 		
 		super.update(g);
 	}
+	
 	
 }
