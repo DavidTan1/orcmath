@@ -31,6 +31,7 @@ import guiTeacher.userInterfaces.Transition;
 
 public abstract class GUIApplication extends JFrame implements Runnable, ComponentListener{
 
+
 	/**
 	 * 
 	 */
