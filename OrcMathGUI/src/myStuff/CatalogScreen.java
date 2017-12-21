@@ -2,6 +2,7 @@ package myStuff;
 
 import java.util.List;
 
+import guiTeacher.components.Action;
 import guiTeacher.components.Button;
 import guiTeacher.components.TextField;
 import guiTeacher.interfaces.Visible;
@@ -37,13 +38,12 @@ public class CatalogScreen extends FullFunctionScreen{
 		viewObjects.add(mainField);
 		
 		
-		click = new Button(200,200,20,30,"Button",new Action(){
+		click = new Button(200,200,20,30,"Button",new Action() {
 			
-			public void Act() {
-			mainField.setText("You click the button");
-			
-			
-			
-			});
-
+			@Override
+			public void act() {
+				mainField.setText("You click the button");				
+			}
+		});
 	}
+}

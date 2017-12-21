@@ -29,8 +29,15 @@ import guiTeacher.userInterfaces.ComponentContainer;
 import guiTeacher.userInterfaces.Screen;
 import guiTeacher.userInterfaces.Transition;
 
-public abstract class GUIApplication extends JFrame implements Runnable, ComponentListener{
+public abstract class GUIApplication extends JFrame implements Runnable, ComponentListener {
 
+	public class ScreenOne {
+
+		public ScreenOne() {
+
+		}
+
+	}
 
 	/**
 	 * 
@@ -38,12 +45,9 @@ public abstract class GUIApplication extends JFrame implements Runnable, Compone
 	private static final long serialVersionUID = 390738816689963935L;
 	public static JFrame mainFrame;
 	private Screen currentScreen;
-	private boolean scaleWithWindow; 
-	
+	private boolean scaleWithWindow;
 
-
-
-	public GUIApplication(int width, int height){
+	public GUIApplication(int width, int height) {
 		super();
 		scaleWithWindow = true;
 		setBounds(20, 20, width, height);
@@ -54,14 +58,12 @@ public abstract class GUIApplication extends JFrame implements Runnable, Compone
 		addComponentListener(this);
 	}
 
-
-
 	public abstract void initScreen();
 
 	public void setScreen(Screen screen) {
 		removeListeners();
 		currentScreen = screen;
-		if (!screen.isFixedSize() && (screen.getWidth() != this.getWidth() || screen.getHeight() != this.getHeight())){
+		if (!screen.isFixedSize() && (screen.getWidth() != this.getWidth() || screen.getHeight() != this.getHeight())) {
 			resize(getWidth(), getHeight());
 		}
 		setContentPane(currentScreen);
@@ -75,83 +77,83 @@ public abstract class GUIApplication extends JFrame implements Runnable, Compone
 		setContentPane(screen);
 		currentScreen = screen;
 		addListeners();
-		
+
 	}
 
-
-	private void removeListeners(){
-		if(currentScreen != null){
-			if(currentScreen.getMouseListener() != null) removeMouseListener(currentScreen.getMouseListener());
-			if(currentScreen.getMouseMotionListener() != null) removeMouseMotionListener(currentScreen.getMouseMotionListener());
-			if(currentScreen.getKeyListener() != null) removeKeyListener(currentScreen.getKeyListener());
-			if(currentScreen.getMouseWheelListener() != null) removeMouseWheelListener(currentScreen.getMouseWheelListener());
+	private void removeListeners() {
+		if (currentScreen != null) {
+			if (currentScreen.getMouseListener() != null)
+				removeMouseListener(currentScreen.getMouseListener());
+			if (currentScreen.getMouseMotionListener() != null)
+				removeMouseMotionListener(currentScreen.getMouseMotionListener());
+			if (currentScreen.getKeyListener() != null)
+				removeKeyListener(currentScreen.getKeyListener());
+			if (currentScreen.getMouseWheelListener() != null)
+				removeMouseWheelListener(currentScreen.getMouseWheelListener());
 		}
 	}
 
-	private void addListeners(){
-		if(currentScreen != null){
-			if(currentScreen.getMouseListener() != null)addMouseListener(currentScreen.getMouseListener());
-			if(currentScreen.getMouseMotionListener() != null) addMouseMotionListener(currentScreen.getMouseMotionListener());
-			if(currentScreen.getKeyListener() != null) addKeyListener(currentScreen.getKeyListener());
-			if(currentScreen.getMouseWheelListener() != null) addMouseWheelListener(currentScreen.getMouseWheelListener());
+	private void addListeners() {
+		if (currentScreen != null) {
+			if (currentScreen.getMouseListener() != null)
+				addMouseListener(currentScreen.getMouseListener());
+			if (currentScreen.getMouseMotionListener() != null)
+				addMouseMotionListener(currentScreen.getMouseMotionListener());
+			if (currentScreen.getKeyListener() != null)
+				addKeyListener(currentScreen.getKeyListener());
+			if (currentScreen.getMouseWheelListener() != null)
+				addMouseWheelListener(currentScreen.getMouseWheelListener());
 		}
 	}
-
 
 	public void run() {
 		long updateTime;
 		long timeAfterUpdate;
-		while(true){
+		while (true) {
 			updateTime = System.currentTimeMillis();
 			currentScreen.update();
 			repaint();
-			timeAfterUpdate = 30-(System.currentTimeMillis()-updateTime);
+			timeAfterUpdate = 30 - (System.currentTimeMillis() - updateTime);
 			try {
-				if(timeAfterUpdate > 0)
-				Thread.sleep(timeAfterUpdate);
+				if (timeAfterUpdate > 0)
+					Thread.sleep(timeAfterUpdate);
 			} catch (InterruptedException e) {
 				e.printStackTrace();
 			}
 		}
 	}
 
-
-	public void resize(int w, int h){
-		if (!currentScreen.isFixedSize()){
+	public void resize(int w, int h) {
+		if (!currentScreen.isFixedSize()) {
 			currentScreen.resize(w, h);
 		}
 	}
 
 	/**
-	 * On resize, every component is simply recreated, as initObjects is ultimately recalled.
+	 * On resize, every component is simply recreated, as initObjects is ultimately
+	 * recalled.
 	 */
 	@Override
 	public void componentResized(ComponentEvent e) {
 		resize(getWidth(), getHeight());
 	}
 
-
-
 	@Override
 	public void componentMoved(ComponentEvent e) {
 		// TODO Auto-generated method stub
-		
+
 	}
-
-
 
 	@Override
 	public void componentShown(ComponentEvent e) {
 		// TODO Auto-generated method stub
-		
+
 	}
-
-
 
 	@Override
 	public void componentHidden(ComponentEvent e) {
 		// TODO Auto-generated method stub
-		
+
 	}
-	
+
 }
