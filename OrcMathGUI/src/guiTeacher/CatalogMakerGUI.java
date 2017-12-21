@@ -24,7 +24,7 @@ public class CatalogMakerGUI extends GUIApplication {
 		super(width, height);
 		setVisible(true);
 		santa = new AnimatedComponent(1, 104, 52, 30);
-		addSequence("resources/santa.jpg", 150, 3, 110, 255, 179, 8);
+		//addSequence("resources/santa.jpg", 150, 3, 110, 255, 179, 8);
 		Thread animation = new Thread(this);
 		animation.start();
 
