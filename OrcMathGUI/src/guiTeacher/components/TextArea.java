@@ -21,6 +21,7 @@ package guiTeacher.components;
 import java.awt.FontMetrics;
 import java.awt.Graphics2D;
 import java.awt.RenderingHints;
+import java.io.File;
 
 public class TextArea extends TextLabel {
 
@@ -62,5 +63,7 @@ public class TextArea extends TextLabel {
 			}
 		}
 	}
+
+	
 
 }

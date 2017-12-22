@@ -1,6 +1,12 @@
 package guiTeacher;
 
+import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
+
+import javax.imageio.ImageIO;
 
 import guiTeacher.AnotherScreen;
 import guiTeacher.GUIApplication;
@@ -9,7 +15,7 @@ import guiTeacher.interfaces.Visible;
 import guiTeacher.userInterfaces.FullFunctionScreen;
 import guiTeacher.userInterfaces.Screen;
 
-public class CatalogMakerGUI extends GUIApplication {
+public class CatalogMakerGUI extends GUIApplication{
 
 	/**
 	 * 
@@ -23,12 +29,9 @@ public class CatalogMakerGUI extends GUIApplication {
 	public CatalogMakerGUI(int width, int height) {
 		super(width, height);
 		setVisible(true);
-		santa = new AnimatedComponent(1, 104, 52, 30);
-		//addSequence("resources/santa.jpg", 150, 3, 110, 255, 179, 8);
-		Thread animation = new Thread(this);
-		animation.start();
-
 	}
+
+
 
 	@Override
 	public void initScreen() {
@@ -38,10 +41,14 @@ public class CatalogMakerGUI extends GUIApplication {
 
 	}
 
-	public static void main(String[] args) {
-		catalog = new CatalogMakerGUI(800, 550);
+	public static void main(String[] args) 
+	{
+		catalog = new CatalogMakerGUI(612, 408);
 		Thread go = new Thread(catalog);
 		go.start();
 	}
 
+	
 }
+	
+

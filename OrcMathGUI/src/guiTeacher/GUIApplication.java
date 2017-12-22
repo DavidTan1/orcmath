@@ -21,7 +21,12 @@ package guiTeacher;
 import java.awt.Graphics;
 import java.awt.event.ComponentEvent;
 import java.awt.event.ComponentListener;
+import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.IOException;
+import java.util.ArrayList;
 
+import javax.imageio.ImageIO;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 
@@ -155,5 +160,4 @@ public abstract class GUIApplication extends JFrame implements Runnable, Compone
 		// TODO Auto-generated method stub
 
 	}
-
 }
