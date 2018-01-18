@@ -15,14 +15,13 @@ public class ClickingTestGUI extends GUIApplication {
 		// TODO Auto-generated constructor stub
 	}
 
-	public static void main(String[] args)
-	{
-		ClickingTestGUI game = new ClickingTestGUI(500,800);
+	public static void main(String[] args) {
+		ClickingTestGUI game = new ClickingTestGUI(500, 800);
 		Thread runner = new Thread(game);
 		runner.start();
-		
+
 	}
-	
+
 	@Override
 	public void initScreen() {
 		ClickingTest screen = new ClickingTest(getWidth(), getHeight());
